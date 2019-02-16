@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Build A Blog!</h1>
+
+    {% for blog in blogs %} 
+    <h2><a href="/blog?id={{ blog.id }}">{{ blog.title }}</a></h2>
+    <p>{{ blog.body }}</p>
+    <br>
+{% endfor %}
+
+{% endblock %}
+<ul>
+    {% for blog in blogs %}
+    <li>{{blog.name}}
+        <form method="POST" action="/blog" style="display:inline-block;">
+            <input type="string" name="blog-id" value="{{blog.id}}" />
+            <input type="submit" value="Done!" />
+        </form>
+    </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <style>
+            .error{
+                color: red;
+            }
+        </style>
+<<<<<<< HEAD
+=======
+        <link rel="stylesheet" href="/static/style.css"
+>>>>>>> 06fd96f37bcd191ced6edb8ad05d56983e1a65b6
+    </head>
+<body>
+
+    <div class="nav">
+        <a href="/blog">Home Blog Page</a> 
+<<<<<<< HEAD
+        <a href="/newpost">Add A New Post!</a>
+=======
+        <a href="/newpost">Add New Blog Post!</a>
+>>>>>>> 06fd96f37bcd191ced6edb8ad05d56983e1a65b6
+    </div>
+
+    <div class="main">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+            {% for category,message in messages %}
+                <li class ="{{category}}">{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endwith %}
+    </div>    
+
+    {% block content %}
+    {% endblock %}
+
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 06fd96f37bcd191ced6edb8ad05d56983e1a65b6
+</body>
+</html>

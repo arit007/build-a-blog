@@ -36,9 +36,12 @@ def new_post():
     if request.method == 'POST':
         title = request.form['title']
         body = request.form['body']
-        if title or body == "":
+        if not title:
             flash("Please don't leave post empty")
             return redirect('/newpost')
+        elif not body:
+            flash("Please don't leave post empty")
+            return redirect('/newpost')    
         else:
             new_blog = Blog(title, body)
             db.session.add(new_blog)
